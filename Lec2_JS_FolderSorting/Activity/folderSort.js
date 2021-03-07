@@ -37,10 +37,11 @@ function createFolder() {
 function sortFolder(folderPath) {
   // get content of folderPath
   let content = fs.readdirSync(folderPath);
+  // console.log(content);
   for (let i = 0; i < content.length; i++) {
     // get extension of each file
     let extensionName = path.extname(content[i]);
-    console.log(extensionName);
+    // console.log(extensionName);
     let extensionFolderExist = checkFolder(extensionName);
     if (extensionFolderExist) {
       moveFile(content[i]);
