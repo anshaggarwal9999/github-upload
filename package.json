@@ -1,0 +1,25 @@
+{
+  "name": "Dev_PP",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshaggarwal9999/github-upload.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshaggarwal9999/github-upload/issues"
+  },
+  "homepage": "https://github.com/anshaggarwal9999/github-upload#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "request": "^2.88.2",
+    "zlib": "^1.0.5"
+  }
+}
