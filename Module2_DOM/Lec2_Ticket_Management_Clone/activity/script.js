@@ -12,6 +12,29 @@ let allFilters = document.querySelectorAll(".ticket-filters div");
 let ticketContainer = document.querySelector(".tickets-container");
 let openModalBtn = document.querySelector(".open-modal");
 
+function loadTickets() {
+  if(localStorage.getItem('allTickets')) {
+    let allTickets = JSON.parse(localStorage.getItem('allTickets'));
+
+    for(let i = 0; i < allTickets.length; i++) {
+      let ticketObject = allTickets[i];
+      // console.log(ticketObject);
+      // create a div and add class ticket to it
+      let ticketDiv = document.createElement("div");
+      //get an unique ID
+      ticketDiv.classList.add("ticket");
+      // set the html of the ticket wala div !!
+      ticketDiv.innerHTML = ` <div class="ticket-filter ${ticketObject.ticketFilter}"></div>
+      <div class="ticket-id">#${ticketObject.ticketId}</div>
+      <div class="ticket-content">${ticketObject.ticketContent}</div>`;
+
+      // append the ticket on the UI !!!!
+      ticketContainer.append(ticketDiv);
+    }
+  }
+}
+loadTickets();
+
 openModalBtn.addEventListener("click", handleOpenModal);
 
 function handleOpenModal(e) {
@@ -82,10 +105,12 @@ function addTicket(e) {
     let modalText = e.target.textContent;
     // create a div and add class ticket to it
     let ticketDiv = document.createElement("div");
+    //get an unique ID
+    let ticketId = uid();
     ticketDiv.classList.add("ticket");
     // set the html of the ticket wala div !!
     ticketDiv.innerHTML = ` <div class="ticket-filter ${selectedFilter}"></div>
-    <div class="ticket-id">#exampleId</div>
+    <div class="ticket-id">#${ticketId}</div>
     <div class="ticket-content">${modalText}</div>`;
 
     // append the ticket on the UI !!!!
@@ -93,6 +118,34 @@ function addTicket(e) {
 
     // remove the modal from the ui !!!
     e.target.parentNode.remove();
+
+    //ticket has been appended
+    if(!localStorage.getItem("allTickets")) {
+      let allTickets = [];
+
+      let ticketObject = {};
+      ticketObject.ticketId = ticketId;
+      ticketObject.ticketFilter = selectedFilter;
+      ticketObject.ticketContent = modalText;
+
+      allTickets.push(ticketObject);
+
+      localStorage.setItem('allTickets', JSON.stringify(allTickets));
+    }
+    else {
+      let allTickets = JSON.parse(localStorage.getItem('allTickets'));
+      
+      let ticketObject = {};
+      ticketObject.ticketId = ticketId;
+      ticketObject.ticketFilter = selectedFilter;
+      ticketObject.ticketContent = modalText;
+
+      allTickets.push(ticketObject);
+
+      let temp = JSON.stringify(allTickets);
+
+      localStorage.setItem('allTickets', temp);
+    }
     
     // again set by default filter as black !!!
     selectedFilter = "black";
