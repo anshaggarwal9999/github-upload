@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas shapes</title>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0px;
+          padding: 0px;
+        }
+  
+        canvas {
+          background: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas></canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        window.addEventListener("resize", function() {
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+        });
+
+        let ctx = canvas.getContext("2d");
+
+        // ctx.fillStyle = "yellow";
+        // ctx.fillRect(10, 10, 200, 200);
+        // ctx.fillRect(220, 220, 300, 300);
+        // ctx.fillStyle = "red";
+        // ctx.fillRect(220, 220, 300, 300);
+
+        ctx.beginPath();
+        ctx.lineWidth = 5;
+        ctx.moveTo(20, 20);
+        ctx.lineTo(50, 50);
+        ctx.stroke();
+        ctx.lineTo(100, 100);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(500, 500);
+        ctx.lineTo(1000, 1000);
+        ctx.stroke();
+
+        let mousedown = false;
+
+        canvas.addEventListener("mouseup", function(e) {
+            // console.log(e);
+            mousedown = false;
+        });
+
+        canvas.addEventListener("mousemove", function(e) {
+            // console.log(e);
+            if(mousedown) {
+                let x = e.clientX;
+                let y = e.clientY;
+
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+        });
+
+        canvas.addEventListener("mousedown", function(e) {
+            //  console.log(e);
+            let x = e.clientX;
+            let y = e.clientY;
+            
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            mousedown = true;
+        });
+    </script>
+</body>
+</html>
