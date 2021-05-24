@@ -1,0 +1,89 @@
+.video-container {
+    height: 100vh;
+    background: black;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  video {
+    height: 100%;
+    width: 90%;
+  }
+
+  .media-controls {
+    /*! background: white; */
+    height: 300px;
+    width: 200px;
+    position: absolute;
+    top: 25%;
+    display: flex;
+    left: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .media-controls>div {
+    height: 80px;
+    width: 80px;
+    /* background: whitesmoke; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid white;
+  }
+
+  .record-video-animate {
+    background: red;
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+  }
+
+  .capture-photo-animate {
+    background: white;
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+  }
+  
+.zoom {
+  /*! background: white; */
+  flex-direction: column;
+  height: 60px !important;
+  border-radius: 0 !important;
+  border: none !important;
+  justify-content: space-between !important;
+}
+
+.zoom>div {
+  background: white;
+  height: 35%;
+  width: 40%;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+  .capture-animate {
+    animation: scaleUp 2s 1;
+  }
+
+  .record-animate {
+    animation: scaleUp 2s infinite;
+  }
+
+  @keyframes scaleUp {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(0.8);       
+      }
+      100% {
+        tranforms: scale(0.1);
+      }
+  }

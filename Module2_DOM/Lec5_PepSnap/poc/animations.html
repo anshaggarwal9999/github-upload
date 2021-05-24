@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            margin: 50px;
+        }
+
+        .red {
+            background: red;
+            animation: blip 1s infinite;
+        }
+
+        .blue {
+            background: blue;
+            animation: translate 2s 4;
+        }
+
+        .yellow {
+            background: yellow;
+            animation: scaleUp 3s infinite;
+        }
+
+        @keyframes translate {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        
+        @keyframes blip{
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0.1;
+            }
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="yellow box"></div>
+    <div class="red box"></div>
+    <div class="blue box"></div>
+</body>
+</html>
