@@ -5,48 +5,48 @@
     overflow: hidden;
   }
   
-  video {
-    height: 100%;
-    width: 90%;
-  }
+video {
+  height: 100%;
+  width: 90%;
+}
 
-  .media-controls {
-    /*! background: white; */
-    height: 300px;
-    width: 200px;
-    position: absolute;
-    top: 25%;
-    display: flex;
-    left: 80%;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
+.media-controls {
+  /*! background: white; */
+  height: 300px;
+  width: 200px;
+  position: absolute;
+  top: 25%;
+  display: flex;
+  left: 80%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
-  .media-controls>div {
-    height: 80px;
-    width: 80px;
-    /* background: whitesmoke; */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 8px solid white;
-  }
+.media-controls>div {
+  height: 80px;
+  width: 80px;
+  /* background: whitesmoke; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 8px solid white;
+}
 
-  .record-video-animate {
-    background: red;
-    height: 70%;
-    width: 70%;
-    border-radius: 50%;
-  }
+.record-video-animate {
+  background: red;
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
+}
 
-  .capture-photo-animate {
-    background: white;
-    height: 70%;
-    width: 70%;
-    border-radius: 50%;
-  }
+.capture-photo-animate {
+  background: white;
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
+}
   
 .zoom {
   /*! background: white; */
@@ -68,22 +68,42 @@
   cursor: pointer;
 }
 
-  .capture-animate {
-    animation: scaleUp 2s 1;
-  }
+.capture-animate {
+  animation: scaleUp 2s 1;
+}
 
-  .record-animate {
-    animation: scaleUp 2s infinite;
-  }
+.record-animate {
+  animation: scaleUp 2s infinite;
+}
 
-  @keyframes scaleUp {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(0.8);       
-      }
-      100% {
-        tranforms: scale(0.1);
-      }
-  }
+@keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.8);       
+    }
+    100% {
+      tranforms: scale(0.1);
+    }
+}
+
+#showMedia {
+  height: 70px;
+    position: absolute;
+    top: 80%;
+    left: 90%;
+    background: black;
+    text-align: center;
+    color: white;
+    width: 70px;
+    /* border: 5px solid white; */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border : 5px solid white;
+} 
