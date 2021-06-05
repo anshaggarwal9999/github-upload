@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin : 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.tools-content {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: aqua;
+}
+
+.canvas-content {
+
+}
+
+.tools {
+
+    height: 80%;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: bisque;
+    border-radius: 10px;
+}
+
+.tool {
+
+    /* height: 90%; */
+    /* width: -moz-available; */
+    height: 70%;
+    width: 10%;
+    position: relative;
+}
+
+.tool img {
+
+    height: 100%;
+    width: 100%;
+    /* position: absolute; */
+    transition: transform 0.5s;
+}
+
+.tool img:hover {
+    transform: scale(1.1);
+}
