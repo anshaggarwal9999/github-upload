@@ -79,6 +79,7 @@ function toggleTicketFilter(e) {
 
 function handleTicketDelete(e) {
   let confirmation = window.prompt("You Want to delete it or not");
+  
   if(confirmation == "Yes" || confirmation == "yes") {
     let ticketToBeDeleted = e.target.id;
 
@@ -250,7 +251,7 @@ function chooseFilter(e) {
   e.target.classList.add('active-filter');
   let ticketFilter = e.target.classList[1];
 
-  loadSelectedTickets(ticketFilter);
+  loadSelectedTickets(ticketFilter); //example red
   // let filterCode = filterCodes[filter];
   // ticketContainer.style.background = filterCode;
 }
