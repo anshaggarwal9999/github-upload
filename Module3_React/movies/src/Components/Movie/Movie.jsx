@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { IMAGE_URL } from '../../API/secrets';
+import "./Movie.css";
 
 class Movie extends Component {
     state = {};
@@ -7,6 +8,7 @@ class Movie extends Component {
     componentDidMount() {}
 
     render() {
+      // console.log(this.props);
         let { poster_path, title, vote_average } = this.props.movie;
         let posterPath = IMAGE_URL + poster_path;
         return (

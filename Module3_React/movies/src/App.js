@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {API_URL, API_KEY, IMAGE_URL} from "./API/secrets";
+import {API_URL, API_KEY} from "./API/secrets";
 import Header from "./Components/Header/Header.jsx";
 import Movies from "./Components/Movies/Movies.jsx";
 
